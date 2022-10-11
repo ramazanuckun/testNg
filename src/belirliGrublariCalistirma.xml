@@ -1,0 +1,44 @@
+<!--
+xml dosyasinda belirli methodlari grublayip calistirmak istersek oncelikle grublandirmak istedigimiz
+methodlari belirtmemeiz gerekir.
+@Test notasyonundan sonra pranrtez acip gurub ismi belirtmemeiz gerekiyor.
+xml dosyasinda test tag indan sonra grup tag ialtinda run tag i icine grublandirdigimiz
+methodlarin grup ismini belirtmemeiz gerekiyor.son olrak grubladigimiz methodlarin hangi pacge altnda oldugunu belirtmemeiz gerekir.
+
+-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen Grublari Calistirma">
+
+    <test name="Belirli Grublar">
+
+<groups>
+    <run>
+        <include name="gp1">
+            
+        </include>
+        
+    </run>
+
+</groups>
+<packages>
+    <package name="tests.day16">
+        
+    </package><package name="tests.day17"></package>
+</packages>
+
+    </test>
+    <test name="belirili grublar 2">
+        <groups>
+            <run>
+                <exclude name="gp2"></exclude>
+
+            </run>
+
+        </groups>
+        <packages>
+            <package name="tests.day19"/>
+            <package name="tests.day20"/><!-- gp2 olarak isimlendirdigimiz disindaki tum methodlar calisir-->
+        </packages>
+    </test>
+</suite>
